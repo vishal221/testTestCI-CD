@@ -16,13 +16,13 @@ pipeline {
         }
         stage('docker prune') {
             steps {
-                sh 'docker system prune -a -f'
+                sh 'sudo docker system prune -a -f'
             }
         }
 
         stage('docker compose') {
             steps {
-                sh 'docker-compose build'
+                sh 'sudo docker-compose build'
             }
         }
 
