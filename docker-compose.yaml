@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   main:
-    image: nathanforester321/main:latest
+    image: vishalsaraya/main:latest
     build: ./main
     ports:
         - target: 5000
@@ -9,7 +9,7 @@ services:
     deploy:
       replicas: 1
   converter:
-    image: nathanforester321/converter:latest
+    image: vishalsaraya/converter:latest
     build: ./converter
     ports:
         - target: 5001
@@ -17,7 +17,7 @@ services:
     deploy:
       replicas: 1
   prime:
-    image: nathanforester321/prime:latest
+    image: vishalsaraya/prime:latest
     build: ./prime
     ports:
         - target: 5002
