@@ -60,8 +60,6 @@ pipeline {
                 sh '''
                    git checkout origin/main
                    git merge origin/dev
-                   git add .
-                   git commit -m "testing merge"
                    git push origin HEAD:main
                    '''
             }
