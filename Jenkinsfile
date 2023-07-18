@@ -6,11 +6,18 @@ pipeline {
                     description: 'Read Jenkinsfile and exit.')
 		    }
     stages {
+        stage('Unit Tests') {
+            steps {
+                sh '''
+                      python3 -m pytest ./prime/tests/test_unit.py
+                   '''
+            }
+        }
         
         stage('Integration Tests') {
             steps {
                 sh '''
-                      python3 -m pytest ./prime/tests/test_unit.py
+                      python3 -m pytest ./main/tests/test_unit.py
                    '''
             }
         }
