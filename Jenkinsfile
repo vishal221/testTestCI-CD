@@ -27,11 +27,11 @@ pipeline {
             }
         }
 
-        stage('docker compose') {
-            steps {
-                sh 'docker-compose build'
-            }
-        }
+        // stage('docker compose') {
+        //     steps {
+        //         sh 'docker-compose build'
+        //     }
+        // }
 
         stage('git credentials') {
             steps {
@@ -49,7 +49,7 @@ pipeline {
                    git merge origin/featureA
                    git add .
                    git commit -m "testing merge"
-                   git push origin HEAD:dev
+                   git push origin HEAD:origin/dev
                    '''
             }
         }
@@ -61,7 +61,7 @@ pipeline {
                    git merge origin/dev
                    git add .
                    git commit -m "testing merge"
-                   git push origin HEAD:main
+                   git push origin HEAD:origin/main
                    '''
             }
         }
