@@ -33,6 +33,15 @@ pipeline {
             }
         }
 
+        stage('git credentials') {
+            steps {
+                sh '''
+                   git config --global user.email "nfeugene86@gmail.com"
+                   git config --global user.name "nathanforester"
+                   '''
+            }
+        }
+
         stage('merge feature to dev') {
             steps {
                 sh '''
