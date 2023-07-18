@@ -50,7 +50,7 @@ pipeline {
                    git merge origin/featureA
                    git add .
                    git commit -m "testing merge"
-                   git push origin HEAD:dev
+                   git push origin dev
                    '''
             }
         }
@@ -60,7 +60,7 @@ pipeline {
                 sh '''
                    git checkout origin/main
                    git merge origin/dev
-                   git push origin HEAD:main
+                   git push origin main
                    '''
             }
         }
