@@ -23,11 +23,7 @@ pipeline {
         }
         stage('docker prune') {
             steps {
-<<<<<<< HEAD
-                sh 'sudo docker system prune -a -f'
-=======
                 sh 'docker system prune -a -f'
->>>>>>> ea30f59e19af9118b74f5d347f10a144e538b6c1
             }
         }
 
@@ -40,9 +36,9 @@ pipeline {
         stage('git credentials') {
             steps {
                 sh '''
-                   git config --global user.email "nfeugene86@gmail.com"
-                   git config --global user.name "nathanforester"
-                   git remote set-url origin git@github.com:nathanforester/testTestCI-CD.git
+                   git config --global user.email "vishalsaraya@outlook.com"
+                   git config --global user.name "vishalsaraya"
+                   git remote set-url origin git@github.com:vishal221/testTestCI-CD.git
                    '''
             }
         }
@@ -73,8 +69,8 @@ pipeline {
             steps {
                 sh '''
                    #!/bin/bash
-                   ssh -i /home/jenkins/.ssh/myKey -o StrictHostKeyChecking=no ubuntu@172.31.38.195 << EOF
-                   git clone https://github.com/nathanforester/testTestCI-CD.git
+                   ssh -i /home/jenkins/.ssh/myKey -o StrictHostKeyChecking=no ubuntu@172.31.43.217 << EOF
+                   git clone https://github.com/vishal221/testTestCI-CD.git
                    sudo docker-compose -f /home/ubuntu/testTestCI-CD/docker-compose.yaml down
                    sudo docker system prune -a -f
                    sudo docker-compose -f /home/ubuntu/testTestCI-CD/docker-compose.yaml up -d
