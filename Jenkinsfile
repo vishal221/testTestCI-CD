@@ -27,9 +27,43 @@ pipeline {
             }
         }
 
-        stage('docker compose') {
+        // stage('docker compose') {
+        //     steps {
+        //         sh 'docker-compose build'
+        //     }
+        // }
+
+        stage('git credentials') {
             steps {
-                sh 'docker-compose build'
+                sh '''
+                   git config --global user.email "nfeugene86@gmail.com"
+                   git config --global user.name "nathanforester"
+                   git remote set-url origin git@github.com:nathanforester/testTestCI-CD.git
+                   '''
+            }
+        }
+
+        stage('merge feature to dev') {
+            steps {
+                sh '''
+                   git checkout origin/dev
+                   git merge origin/featureA
+                   git add .
+                   git commit -m "testing merge"
+                   git push origin HEAD:dev
+                   '''
+            }
+        }
+
+        stage ('merge dev to main') {
+            steps {
+                sh '''
+                   git checkout origin/main
+                   git merge origin/dev
+                   git add .
+                   git commit -m "testing merge"
+                   git push origin HEAD:main
+                   '''
             }
         }
 
@@ -49,4 +83,4 @@ pipeline {
         }
         
     }
-}
+}// some text
