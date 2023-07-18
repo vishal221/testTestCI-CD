@@ -13,16 +13,13 @@ def prime(ageInMonths):
         ageMonths = int(float(ageInMonths))
     except ValueError:
         return "ValueError: please enter a number"
-    if ageMonths > 1:
-        for i in range(2, ageMonths):
-            if ageMonths % i == 0:
-                return 'composite'
-            else:
-                return 'prime'
+    if ageMonths < 1:
+        return 'You do not appear to exist'
     elif ageMonths == 1:
         return 'neither prime nor composite'
-    else:
-        prime = "You do not appear to exist"
-    print(str(prime), file=sys.stderr)
-    print(str(prime), file=sys.stdout)
-    return prime
+    elif ageMonths > 1:
+        for i in range(2, ageMonths):
+            if ageMonths % i == 0: #if age in months in divisible by i then composite, exit statement if it is not divisible
+                return 'composite'
+        return 'prime' 
+    

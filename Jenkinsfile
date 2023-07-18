@@ -26,19 +26,19 @@ pipeline {
             }
         }
 
-        stage('connect via ssh deploy server') {
-            steps {
-                sh '''
-                   #!/bin/bash
-                   ssh -i /home/jenkins/.ssh/myKey -o StrictHostKeyChecking=no ubuntu@172.31.39.95 << EOF
-                   sudo docker-compose -f /home/ubuntu/myDir/docker-compose.yaml down
-                   sudo docker system prune -a -f
-                   sudo docker-compose -f /home/ubuntu/myDir/docker-compose.yaml up -d
-                   sudo rm -R /home/ubuntu/testTestCI-CD
-                   << EOF
-                '''
-            }
-        }
+        // stage('connect via ssh deploy server') {
+        //     steps {
+        //         sh '''
+        //            #!/bin/bash
+        //            ssh -i /home/jenkins/.ssh/myKey -o StrictHostKeyChecking=no ubuntu@172.31.39.95 << EOF
+        //            sudo docker-compose -f /home/ubuntu/myDir/docker-compose.yaml down
+        //            sudo docker system prune -a -f
+        //            sudo docker-compose -f /home/ubuntu/myDir/docker-compose.yaml up -d
+        //            sudo rm -R /home/ubuntu/testTestCI-CD
+        //            << EOF
+        //         '''
+        //     }
+        // }
         
     }
 }
