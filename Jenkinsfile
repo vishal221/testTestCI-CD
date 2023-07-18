@@ -47,6 +47,9 @@ pipeline {
                 sh '''
                    git checkout origin/dev
                    git merge origin/featureA
+                   git add .
+                   git commit -m "testing merge"
+                   git push
                    '''
             }
         }
@@ -56,6 +59,9 @@ pipeline {
                 sh '''
                    git checkout origin/main
                    git merge origin/dev
+                   git add .
+                   git commit -m "testing merge"
+                   git push
                    '''
             }
         }
