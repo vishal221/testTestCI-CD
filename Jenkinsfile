@@ -37,7 +37,7 @@ pipeline {
             steps {
                 sh '''
                    git checkout featureA
-                   git merge dev
+                   git merge origin/dev
                    '''
             }
         }
