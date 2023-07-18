@@ -54,7 +54,7 @@ pipeline {
         stage ('merge dev to main') {
             steps {
                 sh '''
-                   git checkout oriring/main
+                   git checkout origin/main
                    git merge origin/dev
                    '''
             }
