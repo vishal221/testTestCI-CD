@@ -49,7 +49,7 @@ pipeline {
                    git merge origin/featureA
                    git add .
                    git commit -m "testing merge"
-                   git push
+                   git push origin HEAD:dev
                    '''
             }
         }
@@ -61,7 +61,7 @@ pipeline {
                    git merge origin/dev
                    git add .
                    git commit -m "testing merge"
-                   git push
+                   git push origin HEAD:main
                    '''
             }
         }
