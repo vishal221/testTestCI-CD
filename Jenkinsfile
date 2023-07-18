@@ -38,6 +38,7 @@ pipeline {
                 sh '''
                    git config --global user.email "nfeugene86@gmail.com"
                    git config --global user.name "nathanforester"
+                   git remote set-url origin git@github.com:nathanforester/testTestCI-CD.git
                    '''
             }
         }
