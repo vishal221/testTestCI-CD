@@ -33,6 +33,24 @@ pipeline {
             }
         }
 
+        stage('merge feature to dev') {
+            steps {
+                sh '''
+                   git checkout featureA
+                   git merge dev
+                   '''
+            }
+        }
+
+        stage ('merge dev to main') {
+            steps {
+                sh '''
+                   git checkout dev
+                   git merge main
+                   '''
+            }
+        }
+
         stage('connect via ssh deploy server') {
             steps {
                 sh '''
