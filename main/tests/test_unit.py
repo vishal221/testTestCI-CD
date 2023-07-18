@@ -54,7 +54,7 @@ class TestMain(TestInit):
             response = self.client.get(
                 ('http://main:5000/')
             )
-            self.assertIn(b'Amount:', response.data)
+            self.assertIn(b'Birth Year:', response.data)
 
             # random comment here
 
