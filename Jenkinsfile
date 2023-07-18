@@ -45,8 +45,8 @@ pipeline {
         stage('merge feature to dev') {
             steps {
                 sh '''
-                   git checkout featureA
-                   git merge origin/dev
+                   git checkout origin/dev
+                   git merge origin/featureA
                    '''
             }
         }
@@ -54,8 +54,8 @@ pipeline {
         stage ('merge dev to main') {
             steps {
                 sh '''
-                   git checkout dev
-                   git merge origin/main
+                   git checkout oriring/main
+                   git merge origin/dev
                    '''
             }
         }
