@@ -30,11 +30,18 @@ class TestBase(TestCase):
 class TestPrime(unittest.TestCase):
 
     def test_values(self):
-
+        
+        self.assertEqual(prime(1989), 'composite', msg='Equal')
+        self.assertEqual(prime(1988), 'composite', msg='Equal')
         self.assertEqual(prime(1986), 'composite', msg='Equal')
-        
-
-
-        
-        
-        
+        self.assertEqual(prime(1987), 'prime', msg='Equal')
+        self.assertEqual(prime(1985), 'composite', msg='Equal')
+        self.assertEqual(prime(1984), 'composite', msg='Equal')
+        self.assertEqual(prime(1983), 'composite', msg='Equal')
+        self.assertEqual(prime(1982), 'composite', msg='Equal')
+        self.assertEqual(prime(1981), 'composite', msg='Equal')
+        self.assertEqual(prime(2), 'prime', msg='Equal')
+        self.assertEqual(prime(1), 'neither prime nor composite', msg='Equal')
+        self.assertEqual(prime(0), 'You do not appear to exist', msg='Equal')
+        self.assertEqual(prime(-1986), 'You do not appear to exist', msg='Equal')
+ 
