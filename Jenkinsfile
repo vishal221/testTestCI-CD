@@ -47,7 +47,7 @@ pipeline {
             steps {
                 sh '''
                    git checkout -f dev
-                   git merge featureA
+                   git merge origin/featureA
                    git push
                    '''
             }
