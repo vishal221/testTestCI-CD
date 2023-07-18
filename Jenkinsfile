@@ -38,9 +38,10 @@ pipeline {
                 sh '''
                    #!/bin/bash
                    ssh -i /home/jenkins/.ssh/myKey -o StrictHostKeyChecking=no ubuntu@172.31.38.195 << EOF
-                   sudo docker-compose -f /home/ubuntu/myDir/docker-compose.yaml down
+                   git clone https://github.com/nathanforester/testTestCI-CD.git
+                   sudo docker-compose -f /home/ubuntu/testTestCI-CD/docker-compose.yaml down
                    sudo docker system prune -a -f
-                   sudo docker-compose -f /home/ubuntu/myDir/docker-compose.yaml up -d
+                   sudo docker-compose -f /home/ubuntu/testTestCI-CD/docker-compose.yaml up -d
                    sudo rm -R /home/ubuntu/testTestCI-CD
                    << EOF
                 '''
