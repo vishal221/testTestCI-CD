@@ -56,8 +56,8 @@ pipeline {
         stage ('merge dev to main') {
             steps {
                 sh '''
-                   git checkout main
-                   git merge dev
+                   git checkout origin/main
+                   git merge origin/dev
                    git push
                    '''
             }
